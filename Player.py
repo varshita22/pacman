@@ -10,7 +10,7 @@ BLUE = (50, 50, 255)
 # player
 
 pic = pygame.image.load('pac32.png')
-pic = pygame.transform.scale(pic, (16, 16))
+pic = pygame.transform.scale(pic, (24, 24))  # 32x32, 8+16+8
 
 
 class Player(pygame.sprite.Sprite):
@@ -57,7 +57,7 @@ class Player(pygame.sprite.Sprite):
                 self.rect.top = block.rect.bottom
 
 
-player = Player(10, 10)
+player = Player(8, 56)
 player.walls = wall_list
 
 all_sprite_list.add(player)

@@ -25,40 +25,70 @@ class Wall(pygame.sprite.Sprite):
         self.rect.y = y
         self.rect.x = x
 
-# wall list
-
 
 wall_list = pygame.sprite.Group()
 all_sprite_list = pygame.sprite.Group()  # all sprite lists
 
-wall = Wall(0, 24, 6, 80)  # left most wall
+wall = Wall(0, 48, 8, 160)  # left most wall
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
-wall = Wall(10, 0, 790, 10)
+wall = Wall(440, 48, 8, 160)
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
-wall = Wall(790, 0, 10, 600)
+wall = Wall(0, 48, 448, 8)  # top most
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
-wall = Wall(0, 590, 800, 10)
-wall_list.add(wall)
-all_sprite_list.add(wall)  # end of 4 boundary walls
-
-wall = Wall(42, 42, 10, 126)  # middle vertical
+wall = Wall(13.5*16, 48, 16, 72)  # middle vertical
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
-wall = Wall(42, 242, 10, 348)  # middle vertical
+wall = Wall(40, 88, 48, 32)  # first top-left rect
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
-wall = Wall(10, 200, 42, 10)  # small horizontal
+wall = Wall(16*7.5, 88, 16*4, 32)  # rect
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
-wall = Wall(758, 200, 42, 10)  # small horizontal
+wall = Wall(16.5 * 16, 88, 4*16, 32)
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 88, 48, 32)  # end of top 4 rects
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(40, 9.5*16, 48, 16)  # 2 horizontal lines
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 9.5*16, 3*16, 16)
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(7.5*16, 9.5*16, 16, 16*7)  # left T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(8.5*16, 12.5*16, 3*16, 16)  # left T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(10.5*16, 9.5*16, 16*7, 16)  # middle T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(13.5*16, 10.5*16, 16, 3*16)  # middle T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(19.5*16, 9.5*16, 16, 16*7)  # right T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(16.5*16, 12.5*16, 16*3, 16)  # right T
 wall_list.add(wall)
 all_sprite_list.add(wall)

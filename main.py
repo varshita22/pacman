@@ -6,8 +6,8 @@ pygame.init()
 
 
 # screen of w=800,h=600
-w = 16*36
-h = 16*28  # 16 x 16 grid
+w = 16*28
+h = 16*36   # 16 x 16 px square
 screen = pygame.display.set_mode((w, h))  # 2 brackets
 
 # colours
