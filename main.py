@@ -14,6 +14,7 @@ screen = pygame.display.set_mode((w, h))  # 2 brackets
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 BLUE = (50, 50, 255)
+GREY = (107, 107, 107)
 
 # title and icon
 pygame.display.set_caption("Pacman")
@@ -22,6 +23,14 @@ pygame.display.set_icon(icon)
 
 # game loop, anything that has to be visible inside
 # game window has to go inside while loop
+
+
+def draw_grid():
+    for x in range(28):
+        pygame.draw.line(screen, GREY, (x*16, 0), (x*16, h))
+    for x in range(36):
+        pygame.draw.line(screen, GREY, (0, x*16), (w, x*16))
+
 
 clock = pygame.time.Clock()
 running = True
@@ -54,6 +63,7 @@ while running:
                 player.changespeed(0, -4)
 
     all_sprite_list.draw(screen)
+    draw_grid()
     all_sprite_list.update()
     pygame.display.update()
     clock.tick(60)
