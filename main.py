@@ -1,6 +1,7 @@
 import pygame
 from Walls import*
 from Player import*
+from Food import*
 # initialize the pygame
 pygame.init()
 
@@ -27,7 +28,8 @@ pygame.display.set_icon(icon)
 
 def draw_grid():
     for x in range(28):
-        pygame.draw.line(screen, GREY, (x*16, 0), (x*16, h))
+        pygame.draw.line(screen, GREY, (x*16, 0), (x*16, h)
+                         )  # draw line from(x,y) to (x,y)
     for x in range(36):
         pygame.draw.line(screen, GREY, (0, x*16), (w, x*16))
 
