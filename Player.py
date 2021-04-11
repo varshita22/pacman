@@ -1,5 +1,6 @@
 import pygame
 from Walls import*
+from Food import*
 pygame.init()
 
 # colours
@@ -10,7 +11,7 @@ BLUE = (50, 50, 255)
 # player
 
 pic = pygame.image.load('pac32.png')
-pic = pygame.transform.scale(pic, (24, 24))  # 32x32, 8+16+8
+pic = pygame.transform.scale(pic, (24, 24))  # 32x32, 8+16+8?
 
 
 class Player(pygame.sprite.Sprite):
@@ -27,6 +28,7 @@ class Player(pygame.sprite.Sprite):
         self.change_x = 0
         self.change_y = 0
         self.walls = None
+        self.food = None
 
     def changespeed(self, x, y):
 
@@ -56,8 +58,12 @@ class Player(pygame.sprite.Sprite):
             else:
                 self.rect.top = block.rect.bottom
 
+        # if(pygame.sprite.spritecollide(self, self.food, True)):
+        #     print("hi")
+        pygame.sprite.spritecollide(self, self.food, True)
+
 
 player = Player(8, 56)
 player.walls = wall_list
-
+player.food = food_list
 all_sprite_list.add(player)
