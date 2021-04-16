@@ -30,18 +30,18 @@ class Food(pygame.sprite.Sprite):
 
 food_list = pygame.sprite.Group()
 
-food = Food(16, 16*4)  # top-left most food
-food_list.add(food)
-all_sprite_list.add(food)
 
-food = Food(16, 16*6)
-food_list.add(food)
-all_sprite_list.add(food)
+def d_food(xs, ys, xe, ye):  # draws a line of food
+    if(xs == xe):
+        for i in range(ys, ye, 32):  # 16
+            food = Food(xs, i)
+            food_list.add(food)
+            all_sprite_list.add(food)
+    if(ys == ye):
+        for i in range(xs, xe, 32):  # 16
+            food = Food(i, ys)
+            food_list.add(food)
+            all_sprite_list.add(food)
 
-food = Food(16, 16*8)
-food_list.add(food)
-all_sprite_list.add(food)
 
-food = Food(16, 16*10)
-food_list.add(food)
-all_sprite_list.add(food)
+d_food(16, 16*4, 16, 16*11)

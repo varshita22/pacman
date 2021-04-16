@@ -85,10 +85,78 @@ wall = Wall(13.5*16, 10.5*16, 16, 3*16)  # middle T
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
+wall = Wall(10.5*16, 21.5*16, 16*7, 16)  # middle T2
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(13.5*16, 22.5*16, 16, 3*16)  # middle T2
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(10.5*16, 27.5*16, 16*7, 16)  # middle T3
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(13.5*16, 28.5*16, 16, 3*16)  # middle T3
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
 wall = Wall(19.5*16, 9.5*16, 16, 16*7)  # right T
 wall_list.add(wall)
 all_sprite_list.add(wall)
 
 wall = Wall(16.5*16, 12.5*16, 16*3, 16)  # right T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(7.5*16, 18.5*16, 16, 16*4)  # left line under left T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(19.5*16, 18.5*16, 16, 16*4)  # right line under right T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(0, 12.5*16, 16*5.5, 8)  # left bend
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(5*16, 12.5*16, 8, 16*10)  # left bend
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(0, 22*16, 16*5.5, 8)  # left bend
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 12.5*16, 16*5.5, 8)  # right bend
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 12.5*16, 8, 16*10)  # right bend
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 22*16, 16*5.5, 8)  # right bend
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(0, 22*16, 8, 16*12)  # left line
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(0, 27.5*16, 16*2.5, 16)  # left tiny
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(16*27.5, 22*16, 8, 16*12)  # right line
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(25.5*16, 27.5*16, 16*2.5, 16)  # right tiny
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(0, 33.5*16, 16*28, 8)  # lower wall
 wall_list.add(wall)
 all_sprite_list.add(wall)
