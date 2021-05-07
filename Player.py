@@ -59,7 +59,9 @@ class Player(pygame.sprite.Sprite):
                 self.rect.top = block.rect.bottom
 
         # if(pygame.sprite.spritecollide(self, self.food, True)):
-        #     print("hi")
+        #     cur_score += 10
+        #     print(cur_score)
+
         pygame.sprite.spritecollide(self, self.food, True)
 
 

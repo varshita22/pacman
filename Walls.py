@@ -160,3 +160,63 @@ all_sprite_list.add(wall)
 wall = Wall(0, 33.5*16, 16*28, 8)  # lower wall
 wall_list.add(wall)
 all_sprite_list.add(wall)
+
+wall = Wall(7.5*16, 24.5*16, 16*4, 16)  # left horizontal line under left T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(16.5*16, 24.5*16, 16*4, 16)  # right horizontal line under right T
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(2.5*16, 24.5*16, 16*3, 16)  # left ulta L
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(4.5*16, 24.5*16, 16, 16*4)  # left ulta L
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 24.5*16, 16*3, 16)  # right ulta L
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(22.5*16, 24.5*16, 16, 16*4)  # right ulta L
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(7.5*16, 27.5*16, 16, 16*4)  # left middle fin
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(2.5*16, 30.5*16, 16*9, 16)  # left middle fin
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(19.5*16, 27.5*16, 16, 16*4)  # right middle fin
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(16.5*16, 30.5*16, 16*9, 16)  # right middle fin
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(10.5*16, 19*16, 16*7, 8)  # middle box, bottom
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(10.5*16, 15.5*16, 16*2.5, 8)  # middle box, top1
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(15*16, 15.5*16, 16*2.5, 8)  # middle box, top2
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(10.5*16, 15.5*16, 8, 16*4)  # middle box, left
+wall_list.add(wall)
+all_sprite_list.add(wall)
+
+wall = Wall(17*16, 15.5*16, 8, 16*4)  # middle box, right
+wall_list.add(wall)
+all_sprite_list.add(wall)
