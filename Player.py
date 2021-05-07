@@ -1,17 +1,27 @@
 import pygame
 from Walls import*
 from Food import*
+from settings import*
 pygame.init()
 
 # colours
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 BLUE = (50, 50, 255)
+TEXT_SIZE = 16
+TEXT_FONT = 'arial black'
 
 # player
 
 pic = pygame.image.load('pac32.png')
 pic = pygame.transform.scale(pic, (24, 24))  # 32x32, 8+16+8?
+
+
+def draw_score(words, scr, screen, pos, size, colour, font_name):
+    font = pygame.font.SysFont(font_name, size)
+    text = font.render(words+str(scr), False, colour)
+    text_size = text.get_size()
+    screen.blit(text, pos)
 
 
 class Player(pygame.sprite.Sprite):
@@ -58,11 +68,11 @@ class Player(pygame.sprite.Sprite):
             else:
                 self.rect.top = block.rect.bottom
 
-        # if(pygame.sprite.spritecollide(self, self.food, True)):
-        #     cur_score += 10
-        #     print(cur_score)
+        if(pygame.sprite.spritecollide(self, self.food, True)):
+            global cur_score
+            cur_score += 10
 
-        pygame.sprite.spritecollide(self, self.food, True)
+        return cur_score
 
 
 player = Player(8, 56)

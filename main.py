@@ -2,22 +2,9 @@ import pygame
 from Walls import*
 from Player import*
 from Food import*
+from settings import*
 # initialize the pygame
 pygame.init()
-
-
-# screen of w=800,h=600
-w = 16*28
-h = 16*36   # 16 x 16 px square
-screen = pygame.display.set_mode((w, h))  # 2 brackets
-
-# colours
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-BLUE = (50, 50, 255)
-GREY = (107, 107, 107)
-TEXT_SIZE = 16
-TEXT_FONT = 'arial black'
 
 # title and icon
 pygame.display.set_caption("Pacman")
@@ -34,13 +21,6 @@ def draw_grid():
                          )  # draw line from(x,y) to (x,y)
     for x in range(36):
         pygame.draw.line(screen, GREY, (0, x*16), (w, x*16))
-
-
-def draw_score(words, screen, pos, size, colour, font_name):
-    font = pygame.font.SysFont(font_name, size)
-    text = font.render(words, False, colour)
-    text_size = text.get_size()
-    screen.blit(text, pos)
 
 
 clock = pygame.time.Clock()
@@ -75,10 +55,8 @@ while running:
 
     all_sprite_list.draw(screen)
     draw_grid()
-    draw_score("SCORE : ", screen, [16*9, 0], TEXT_SIZE, WHITE, TEXT_FONT)
-    # for entity in food_list:
-    # screen.blit(entity.image, entity.rect)
-    all_sprite_list.update()
+    draw_score("SCORE : ", player.update(), screen, [
+        16*9, 0], TEXT_SIZE, WHITE, TEXT_FONT)
     pygame.display.update()
     # pygame.display.flip()
     clock.tick(60)

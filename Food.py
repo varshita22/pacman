@@ -1,5 +1,4 @@
 import pygame
-import pygame.gfxdraw
 from Walls import*
 from Player import*
 pygame.init()
@@ -22,14 +21,6 @@ class Food(pygame.sprite.Sprite):
 
         # Call the parent's constructor
         super().__init__()
-
-        # Make a white food, of the size specified in the parameters
-        # self.image = pygame.Surface((16, 16), pygame.SRCALPHA)
-        # pygame.gfxdraw.aacircle(self.image, x+8, y+8, 8, (255, 255, 255))
-        # pygame.gfxdraw.filled_circle(self.image, x+8, y+8, 8, (255, 255, 255))
-
-        # self.image = pygame.Surface([16, 16])
-        # self.image.fill(WHITE)
 
         self.image = food_pic
 
