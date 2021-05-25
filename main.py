@@ -3,6 +3,8 @@ from Walls import*
 from Player import*
 from Food import*
 from settings import*
+from Blinky_ghost import*
+import random
 # initialize the pygame
 pygame.init()
 
@@ -24,9 +26,11 @@ def draw_grid():
 
 
 clock = pygame.time.Clock()
+# running
 running = True
+
 while running:
-    screen.fill(BLACK)  # 3 values of RGB, teal
+    screen.fill(BLACK)  # 3 values of RGB
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -53,10 +57,27 @@ while running:
             elif event.key == pygame.K_DOWN:
                 player.changespeed(0, -4)
 
+        if event.type == pygame.KEYDOWN:
+            n = random.randint(-2, 1)
+            if n == -2:
+                #print("hi -2")
+                rghost.changespeed(4, 0)
+            elif n == -1:
+                #print("hi -1")
+                rghost.changespeed(-4, 0)
+            elif n == 0:
+                #print("hi 0")
+                rghost.changespeed(0, 4)
+            else:
+                #print("hi 1")
+                rghost.changespeed(0, -4)
+
     all_sprite_list.draw(screen)
     draw_grid()
+    # rghost.update()
+    all_sprite_list.update()
     draw_score("SCORE : ", player.update(), screen, [
         16*9, 0], TEXT_SIZE, WHITE, TEXT_FONT)
     pygame.display.update()
-    # pygame.display.flip()
+    pygame.display.flip()
     clock.tick(60)

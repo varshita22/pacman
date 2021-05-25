@@ -1,23 +1,15 @@
 import pygame
 from Walls import*
-from Food import*
+from Player import*
 from settings import*
 pygame.init()
 
-# player
-
-pic = pygame.image.load('pac32.png')
+# blinky
+pic = pygame.image.load('red_ghost.png')
 pic = pygame.transform.scale(pic, (24, 24))  # 32x32, 8+16+8?
 
 
-def draw_score(words, scr, screen, pos, size, colour, font_name):
-    font = pygame.font.SysFont(font_name, size)
-    text = font.render(words+str(scr), False, colour)
-    text_size = text.get_size()
-    screen.blit(text, pos)
-
-
-class Player(pygame.sprite.Sprite):
+class Red_ghost(pygame.sprite.Sprite):
 
     def __init__(self, x, y):
         # Call the parent's constructor
@@ -31,7 +23,7 @@ class Player(pygame.sprite.Sprite):
         self.change_x = 0
         self.change_y = 0
         self.walls = None
-        self.food = None
+        self.plyr = None
 
     def changespeed(self, x, y):
 
@@ -47,8 +39,10 @@ class Player(pygame.sprite.Sprite):
             # If we are moving right, set our right side to the left side of the item we hit or vice versa
             if self.change_x > 0:
                 self.rect.right = block.rect.left
+                # self.changespeed(0, 4)
             else:
                 self.rect.left = block.rect.right
+                # self.changespeed(0, -4)
 
         self.rect.y += self.change_y
 
@@ -58,19 +52,17 @@ class Player(pygame.sprite.Sprite):
             # same for up down
             if self.change_y > 0:
                 self.rect.bottom = block.rect.top
+                # self.changespeed(4, 0)
             else:
                 self.rect.top = block.rect.bottom
+                # self.changespeed(-4, 0)
 
-        if(pygame.sprite.spritecollide(self, self.food, True)):
+        if(pygame.sprite.spritecollide(self, self.plyr, True)):
             global cur_score
-            cur_score += 10
-
-        return cur_score
+            cur_score -= 100
 
 
-player_list = pygame.sprite.Group()
-player = Player(8, 56)
-player.walls = wall_list
-player.food = food_list
-player_list.add(player)
-all_sprite_list.add(player)
+rghost = Red_ghost(16*13, 13.5*16)
+rghost.walls = wall_list
+rghost.plyr = player_list
+all_sprite_list.add(rghost)
